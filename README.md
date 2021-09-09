@@ -8,3 +8,24 @@
 - cd into your applications main directory and run: **git init**
 
 You should now be able to push your fullstack app to github
+
+# PostgreSQL Commands
+- Open postgresql shell in terminal
+  * psql postgres
+- Show databases:
+  * \l
+- Leave psql shell:
+  * \l
+- Use database:
+  * \c databasename;
+- Example create table:
+  * CREATE TABLE demo (
+	user_id serial PRIMARY KEY,
+	username VARCHAR ( 50 ) UNIQUE NOT NULL,
+	password VARCHAR ( 50 ) NOT NULL,
+	email VARCHAR ( 255 ) UNIQUE NOT NULL,
+	created_on TIMESTAMP NOT NULL,
+  last_login TIMESTAMP);
+- Example insert into:
+  * INSERT INTO demo (username, password, email, created_on, last_login)
+    VALUES ('ViniB', 'boltman', 'vinibjazevich97@gmail.com', current_timestamp, current_timestamp);
