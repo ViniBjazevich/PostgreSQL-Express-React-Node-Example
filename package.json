@@ -1,0 +1,25 @@
+{
+  "name": "pern-fullstack",
+  "version": "1.0.0",
+  "description": "# How to create full stack repo and with create-react-app - Create your applications directory and add a client and a server folder. - cd into the client folder and run: **npx create-react-app .**   * create-react-app will by default initialize git in the client folder. You are not able to have git in nested folders so we need to remove git from the client folder and add git to our applications repo. - To remove git from client run: **rm -rf .git** - cd into your applications main directory and run: **git init**",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^8.7.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-server": "node server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ViniBjazevich/PostgreSQL-Express-React-Node-Example.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ViniBjazevich/PostgreSQL-Express-React-Node-Example/issues"
+  },
+  "homepage": "https://github.com/ViniBjazevich/PostgreSQL-Express-React-Node-Example#readme"
+}
