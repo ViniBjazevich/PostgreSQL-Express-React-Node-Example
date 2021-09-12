@@ -9,15 +9,17 @@ const credentials = {
 };
 
 // Connect with a connection pool.
+const pool = new Pool(credentials);
 
-async function poolDemo() {
-  const pool = new Pool(credentials);
-  const now = await pool.query("SELECT * FROM demo");
-  console.log(now.rows);
-  await pool.end();
+// async function poolDemo() {
+//   const pool = new Pool(credentials);
+//   const now = await pool.query("SELECT * FROM demo");
+//   console.log(now.rows);
+//   await pool.end();
 
-  return now;
-}
+//   return now;
+// }
 
-poolDemo();
+// poolDemo();
 
+module.exports = pool;

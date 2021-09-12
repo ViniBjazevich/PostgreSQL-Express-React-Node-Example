@@ -4,6 +4,8 @@
   "description": "# How to create full stack repo and with create-react-app - Create your applications directory and add a client and a server folder. - cd into the client folder and run: **npx create-react-app .**   * create-react-app will by default initialize git in the client folder. You are not able to have git in nested folders so we need to remove git from the client folder and add git to our applications repo. - To remove git from client run: **rm -rf .git** - cd into your applications main directory and run: **git init**",
   "main": "index.js",
   "dependencies": {
+    "axios": "^0.21.4",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "pg": "^8.7.1"
   },
