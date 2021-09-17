@@ -1,41 +1,32 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
-import Form from './Form'
+import AddTodoForm from './AddTodoForm'
 import ListTodos from './ListTodos';
+import SelectedItem from './SelectedItem';
 
 function App() {
-  const [demo, setDemo] = useState([])
   const [todoList, setTodoList] = useState([])
-
-  function getAllDemo() {
-    axios.get('http://localhost:3001/demo')
-      .then(response => {
-        setDemo(response.data)
-      })
-      .catch((e) => console.log(e))
-  }
+  const [selectedItem, setSelectedItem] = useState({})
 
   function getAllTodo() {
     axios.get('http://localhost:3001/todo')
-      .then(response => {
-        setTodoList(response.data)
-      })
+      .then(response => setTodoList(response.data))
       .catch((e) => console.log(e))
   }
 
+
   useEffect(() => {
-    getAllDemo()
     getAllTodo()
   }, [])
 
 
   return (
     <div>
-      <h1>My app:</h1>
-      <Form updateTodoList={getAllTodo}/>
-      <div>{demo?.[0]?.username}</div>
-      <ListTodos todoList={todoList}/>
+      <h1>Add a todo:</h1>
+      <AddTodoForm getAllTodo={getAllTodo}/>
+      {selectedItem.id ? <SelectedItem selectedItem={selectedItem} getAllTodo={getAllTodo} setSelectedItem={setSelectedItem}/> : null}
+      <ListTodos todoList={todoList} setSelectedItem={setSelectedItem}/>
     </div>
   );
 }

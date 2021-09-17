@@ -31,7 +31,28 @@ app.post('/todo', (req, res) => {
 
   db
     .query(`INSERT INTO todo (todo) VALUES ('${todo}')`)
-    .then(response => console.log('Added'))
+    .then(() => res.status(200).send('Item added'))
+    .catch(e => console.log(e))
+})
+
+// FIXME
+app.put('/todo/:id', (req, res) => {
+  let { todo } = req.body;
+  let { id } = req.params;
+
+  db
+    .query(`UPDATE todo SET todo = '${todo}' WHERE id = ${id}`)
+    .then(response => res.status(200).send(`Updated item to ${todo}`))
+    .catch(e => console.log(e))
+})
+
+
+app.delete('/todo/:id', (req, res) => {
+  let { id } = req.params;
+
+  db
+    .query(`DELETE FROM todo WHERE id = ${id}`)
+    .then(response => res.status(200).send(`Deleted item with ID: ${id}`))
     .catch(e => console.log(e))
 })
 

@@ -1,5 +1,12 @@
 # PostgreSQL-Express-React-Node-Example
 
+# Start Application:
+- Start server:
+  * $ npm run start-server
+- Start react app:
+  * cd into client
+  * $ npm start
+
 # How to create full stack repo and with create-react-app
 - Create your applications directory and add a client and a server folder.
 - cd into the client folder and run: **npx create-react-app .**
