@@ -9,12 +9,16 @@ export default function AddTodoForm({ getAllTodo }) {
     e.preventDefault();
 
     axios.post(`http://localhost:3001/todo`, {todo})
-      .then(() => getAllTodo())
+      .then(() => {
+        getAllTodo()
+        setTodo('')
+      })
       .catch(error => console.log(error))
   };
 
   return (
     <form onSubmit={handleSubmit}>
+      <h2>Add a todo:</h2>
       <input
         value={todo}
         onChange={e => setTodo(e.target.value)}
