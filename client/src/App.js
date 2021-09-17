@@ -23,7 +23,6 @@ function App() {
 
   return (
     <div>
-      <h1>Add a todo:</h1>
       <AddTodoForm getAllTodo={getAllTodo}/>
       {selectedItem.id ? <SelectedItem selectedItem={selectedItem} getAllTodo={getAllTodo} setSelectedItem={setSelectedItem}/> : null}
       <ListTodos todoList={todoList} setSelectedItem={setSelectedItem}/>

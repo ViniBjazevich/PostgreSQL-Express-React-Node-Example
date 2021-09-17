@@ -9,8 +9,8 @@ export default function UpdateTodoForm({ selectedItem, setSelectedItem, getAllTo
 
     axios.put(`http://localhost:3001/todo/${selectedItem.id}`, {todo})
       .then(() => {
-        setSelectedItem({});
-        getAllTodo();
+        setSelectedItem({})
+        getAllTodo()
       })
       .catch(error => console.log(error))
   };

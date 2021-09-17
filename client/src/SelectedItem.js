@@ -24,7 +24,7 @@ export default function SelectedItem({ selectedItem, getAllTodo, setSelectedItem
         <h3 style={{margin: '0 1rem 0 0'}}>{selectedItem.id}</h3>
         <h3 style={{margin: '0 0 0 1rem'}}>{selectedItem.todo}</h3>
         <button onClick={deleteTodo}>Delete</button>
-        <button onClick={() => setToggleUpdate((prev) => !prev)}>Update</button>
+        <button onClick={() => setToggleUpdate((prev) => !prev)}>{toggleUpdate ? 'Cancel Update': 'Update'}</button>
       </div>
       {(toggleUpdate) ? <UpdateTodoForm selectedItem={selectedItem}
       getAllTodo={getAllTodo} setSelectedItem={setSelectedItem}/> : null}
