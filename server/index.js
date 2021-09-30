@@ -7,7 +7,6 @@ const port = 3001
 app.use(cors())
 app.use(express.json())
 
-
 app.get('/demo', (req, res) => {
   db
     .query("SELECT * FROM demo")
@@ -35,7 +34,6 @@ app.post('/todo', (req, res) => {
     .catch(e => console.log(e))
 })
 
-// FIXME
 app.put('/todo/:id', (req, res) => {
   let { todo } = req.body;
   let { id } = req.params;
@@ -45,7 +43,6 @@ app.put('/todo/:id', (req, res) => {
     .then(response => res.status(200).send(`Updated item to ${todo}`))
     .catch(e => console.log(e))
 })
-
 
 app.delete('/todo/:id', (req, res) => {
   let { id } = req.params;
