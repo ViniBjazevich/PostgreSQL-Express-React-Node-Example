@@ -1,10 +1,13 @@
 # PostgreSQL-Express-React-Node-Example
 
 # Start Application:
+- Install Dependencies:
+  * $ npm i
 - Start server:
   * $ npm run start-server
 - Start react app:
-  * cd into client
+  * $ cd client
+  * $ npm i
   * $ npm start
 
 # How to create full stack repo and with create-react-app
